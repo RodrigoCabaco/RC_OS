@@ -705,7 +705,7 @@ namespace TerminalBasedOs_Try
                             {
                                 SubItems1ContentList.WriteLine(item);
                             }
-                            SubItems1ContentList.WriteLine("endOf" + "\n" + IndexInItem);
+                            SubItems1ContentList.WriteLine("endOf" + "\n");
                             SubItems1ContentList.Close();
                         }
                         ModifiedContent.Add(ReadLineStr);
@@ -766,7 +766,7 @@ namespace TerminalBasedOs_Try
                             {
                                 SubItems2ContentList.WriteLine(item);
                             }
-                            SubItems2ContentList.WriteLine("endOf" + "\n" + IndexInItem);
+                            SubItems2ContentList.WriteLine("endOf" + "\n");
                             SubItems2ContentList.Close();
                         }
                         ModifiedContent.Add(ReadLineStr);
