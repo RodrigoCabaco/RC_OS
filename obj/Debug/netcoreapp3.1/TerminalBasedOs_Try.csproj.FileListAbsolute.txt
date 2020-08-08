@@ -1,0 +1,14 @@
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.csprojAssemblyReference.cache
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.AssemblyInfoInputs.cache
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.AssemblyInfo.cs
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\bin\Debug\netcoreapp3.1\TerminalBasedOs_Try.exe
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\bin\Debug\netcoreapp3.1\TerminalBasedOs_Try.deps.json
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\bin\Debug\netcoreapp3.1\TerminalBasedOs_Try.runtimeconfig.json
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\bin\Debug\netcoreapp3.1\TerminalBasedOs_Try.runtimeconfig.dev.json
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\bin\Debug\netcoreapp3.1\TerminalBasedOs_Try.dll
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\bin\Debug\netcoreapp3.1\TerminalBasedOs_Try.pdb
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.dll
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.pdb
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.genruntimeconfig.cache
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.Properties.Resources.resources
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.csproj.GenerateResource.cache

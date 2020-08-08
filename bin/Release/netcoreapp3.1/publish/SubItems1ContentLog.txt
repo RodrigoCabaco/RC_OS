@@ -1,0 +1,3 @@
+lsItems --content
+Teste de editor de textos;
+Espero que corra bem!
