@@ -12,3 +12,9 @@ C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\Termin
 C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.genruntimeconfig.cache
 C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.Properties.Resources.resources
 C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.csproj.GenerateResource.cache
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\bin\Debug\netcoreapp3.1\FireSharp.dll
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\bin\Debug\netcoreapp3.1\FireSharp.Serialization.JsonNet.dll
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\bin\Debug\netcoreapp3.1\RestSharp.dll
+C:\Users\Rodrigo\source\repos\TerminalBasedOs_Try\obj\Debug\netcoreapp3.1\TerminalBasedOs_Try.csproj.CopyComplete

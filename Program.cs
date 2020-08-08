@@ -4,9 +4,6 @@ using System.Linq;
 using System.Text;
 using System.IO;
 using System.ComponentModel.Design;
-using FireSharp.Config;
-using FireSharp.Interfaces;
-using FireSharp.Response;
 
 namespace TerminalBasedOs_Try
 {
@@ -314,35 +311,31 @@ namespace TerminalBasedOs_Try
                     List<string> SubItems1Loader = new List<string>();
                     while ((lineReader = fileReader.ReadLine()) != "endOf" )
                     {
-                        if (fileReader.ReadLine() == "endOf")
-                        {
-                            counterContent1++;
-                            SubItems1Content.Add(String.Join("\n", SubItems1Loader.ToArray()));
-                            Console.WriteLine("- Loaded Content (Main)");
-                        }
-
                         SubItems1Loader.Add(lineReader);
-                        
+
+
                         System.Threading.Thread.Sleep(500);
                         Console.WriteLine("- Loading Content (Main)...");
                     }
+
+                    counterContent1++;
+                    SubItems1Content.Add(String.Join("\n", SubItems1Loader.ToArray()));
+                    Console.WriteLine("- Loaded Content (Main)");
+
 
                     fileReader = new StreamReader("SubItems2ContentLog.txt");
                     List<string> SubItems2Loader = new List<string>();
 
                     while ((lineReader = fileReader.ReadLine()) != "endOf")
                     {
-                        if (fileReader.ReadLine() == "endOf")
-                        {
-                            counterContent2++;
-                            SubItems2Content.Add(String.Join("\n", SubItems2Loader.ToArray()));
-                            Console.WriteLine("- Loaded Content (Index)");
-                        }
-
-
+                        SubItems2Loader.Add(lineReader);
                         System.Threading.Thread.Sleep(500);
                         Console.WriteLine("- Loading Content (Index)...");
                     }
+                    counterContent2++;
+                    SubItems2Content.Add(String.Join("\n", SubItems2Loader.ToArray()));
+                    Console.WriteLine("- Loaded Content (Index)");
+
                     fileReader = new StreamReader("ItemNameLog.txt");
                     while((lineReader = fileReader.ReadLine()) != null)
                     {
@@ -638,7 +631,7 @@ namespace TerminalBasedOs_Try
                     {
                         ItemTypes2List = new List<string> { TypeOfItem };
                         SubItems2List = new List<string> { NameOfItem + "." + ItemTypes2List[0] };
-                        SubItems2Content[0] = "Nothing";
+                        SubItems2Content.Add("Nothing");
                     }
                     else
                     {
