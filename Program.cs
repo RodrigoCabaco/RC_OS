@@ -190,6 +190,12 @@ namespace TerminalBasedOs_Try
                     {
                         ItemNameLog = File.CreateText("ItemNameLog.txt");
                     }
+                    StreamWriter endOfCheck = File.AppendText("SubItems1ContentLog.txt");
+                    endOfCheck.WriteLine("endOf");
+                    endOfCheck.Close();
+                    StreamWriter endOfCheck2 = File.AppendText("SubItems1ContentLog.txt");
+                    endOfCheck2.WriteLine("endOf");
+                    endOfCheck2.Close();
 
                     foreach (var item in SubItems1List)
                     {       
@@ -199,6 +205,7 @@ namespace TerminalBasedOs_Try
                     {
                         SubItems2Log.WriteLine(item);
                     }
+
 
 
                     foreach (var item in ItemTypes1List)
