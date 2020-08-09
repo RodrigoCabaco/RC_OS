@@ -40,7 +40,7 @@ namespace TerminalBasedOs_Try
             ItemTypes1List.Add("None");
             List<string> ItemTypes2List = new List<string>();
             ItemTypes2List.Add("None");
-            string[] ItemTypes = { "itm.txt", "itm.Indexer" };
+            string[] ItemTypes = { "itm.txt", "itm.code" };
             StreamWriter SubItems1Log;
             StreamWriter SubItems2Log;
             StreamWriter ItemTypes1Log;
@@ -191,12 +191,6 @@ namespace TerminalBasedOs_Try
                     {
                         ItemNameLog = File.CreateText("ItemNameLog.txt");
                     }
-                    StreamWriter endOfCheck = File.AppendText("SubItems1ContentLog.txt");
-                    endOfCheck.WriteLine("endOf");
-                    endOfCheck.Close();
-                    StreamWriter endOfCheck2 = File.AppendText("SubItems1ContentLog.txt");
-                    endOfCheck2.WriteLine("endOf");
-                    endOfCheck2.Close();
 
                     foreach (var item in SubItems1List)
                     {
@@ -757,6 +751,7 @@ namespace TerminalBasedOs_Try
                         ReadLineStr = Console.ReadLine();
                         if (ReadLineStr == "exitItem" || ReadLineStr == "exitSave")
                         {
+
                             if (File.Exists("SubItems2ContentLog.txt"))
                             {
                                 SubItems2ContentList = File.AppendText("SubItems2ContentLog.txt");
@@ -783,10 +778,18 @@ namespace TerminalBasedOs_Try
                             SubItems1ContentList.Close();
 
                         }
+                        if (ReadLineStr == "compile")
+                        {
+                            Joiner = String.Join("\n", ModifiedContent.ToArray());
+                            Console.WriteLine(Joiner);
+                           // Compiler.Compile(Joiner);
+                        }
+
                         ModifiedContent.Add(ReadLineStr);
                         Joiner = String.Join("\n", ModifiedContent.ToArray());
                         SubItems2Content[IndexInItem] = Joiner;
-    
+
+
                     }
 
 
