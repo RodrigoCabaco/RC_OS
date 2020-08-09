@@ -623,13 +623,14 @@ namespace TerminalBasedOs_Try
                     {
                         ItemTypes1List = new List<string> { TypeOfItem };
                         SubItems1List = new List<string> { NameOfItem + "." + ItemTypes1List[0] };
-
+                        SubItems1Content.Add("");
 
                     }
                     else
                     {
                         ItemTypes1List.Add(TypeOfItem);
                         SubItems1List.Add(NameOfItem + "." + TypeOfItem);
+                        SubItems1Content.Add("");
                     }
                 }
                 if (IndexOfMainItem == 1)
@@ -638,13 +639,13 @@ namespace TerminalBasedOs_Try
                     {
                         ItemTypes2List = new List<string> { TypeOfItem };
                         SubItems2List = new List<string> { NameOfItem + "." + ItemTypes2List[0] };
-                        SubItems2Content.Add("Nothing");
+                        SubItems2Content.Add("");
                     }
                     else
                     {
                         ItemTypes2List.Add(TypeOfItem);
                         SubItems2List.Add(NameOfItem + "." + TypeOfItem);
-                        SubItems2Content.Add("Nothing");
+                        SubItems2Content.Add("");
                     }
                 }
                 
@@ -654,7 +655,8 @@ namespace TerminalBasedOs_Try
             {
                 Console.Clear();
                 List<string> ModifiedContent = new List<string>();
-                Console.WriteLine(">> Edit/Create the Content by Clicking Enter << ");
+                Console.WriteLine(">> Edit/Create the Content by Clicking Enter << \n " +
+                    ">> Write exitSave when finished << ");
                 string Joiner = "none";
                 
                
