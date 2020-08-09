@@ -13,7 +13,7 @@ namespace TerminalBasedOs_Try
         {
 
             //initialization
-            
+
 
             string ReadLineStr;
             int ReadLineInt = 0;
@@ -31,7 +31,7 @@ namespace TerminalBasedOs_Try
             int MainItemIndex;
             string TypeOfNewItem;
             int indexNumber;
-            string[] ModifyItemTypes = { "Name" }; 
+            string[] ModifyItemTypes = { "Name" };
             List<string> SubItems2List = new List<string>();
             SubItems2List.Add("Empty");
             List<string> SubItems1List = new List<string>();
@@ -48,8 +48,8 @@ namespace TerminalBasedOs_Try
             StreamWriter SubItems1ContentList;
             StreamWriter SubItems2ContentList;
             StreamWriter ItemNameLog;
-            
-        
+
+
 
             //content
             List<string> SubItems1Content = new List<string>();
@@ -66,21 +66,21 @@ namespace TerminalBasedOs_Try
             for (int i = 0; i < 5; i--)
             {
 
-              
+
                 Console.Write(">>");
-              
-                
+
+
                 ReadLineStr = Console.ReadLine();
-                if(ReadLineStr.ToString() == null)
+                if (ReadLineStr.ToString() == null)
                 {
                     ReadLineInt = Convert.ToInt32(Console.ReadLine());
                 }
                 if (ReadLineStr == "lsItems")
                 {
-                    ShowItems(false);                  
+                    ShowItems(false);
                 }
 
-                if(ReadLineStr == "lsItems --content")
+                if (ReadLineStr == "lsItems --content")
                 {
                     int indexmp = 0;
                     int MainIndex;
@@ -99,7 +99,7 @@ namespace TerminalBasedOs_Try
                     ReadLineInt = Convert.ToInt32(Console.ReadLine());
                     InIndex = ReadLineInt;
                     ModifyContent(MainIndex, InIndex);
-                    
+
                 }
                 if (ReadLineStr == "lsItems --content-see")
                 {
@@ -123,7 +123,8 @@ namespace TerminalBasedOs_Try
                         InIndex = ReadLineInt;
                         Console.Clear();
                         Console.WriteLine(SubItems1Content[InIndex]);
-                    } else if (MainIndex == 1)
+                    }
+                    else if (MainIndex == 1)
                     {
                         indexNumber = 1;
                         ShowItem();
@@ -133,8 +134,8 @@ namespace TerminalBasedOs_Try
                         Console.Clear();
                         Console.WriteLine(SubItems2Content[InIndex]);
                     }
-                    
-                    
+
+
 
                 }
 
@@ -142,7 +143,7 @@ namespace TerminalBasedOs_Try
                 //save, write and close the log stream, when called back opens again;
                 if (ReadLineStr == "Save" || ReadLineStr == "saveLog" || ReadLineStr == "SaveLog" || ReadLineStr == "save")
                 {
-                   
+
 
                     if (!File.Exists("SubItems1Log.txt"))
                     {
@@ -180,8 +181,8 @@ namespace TerminalBasedOs_Try
                     {
                         ItemTypes2Log = File.CreateText("ItemTypes2Log.txt");
                     }
-                   
-                    
+
+
                     if (!File.Exists("ItemsNameLog.txt"))
                     {
                         ItemNameLog = File.CreateText("ItemNameLog.txt");
@@ -198,7 +199,7 @@ namespace TerminalBasedOs_Try
                     endOfCheck2.Close();
 
                     foreach (var item in SubItems1List)
-                    {       
+                    {
                         SubItems1Log.WriteLine(item);
                     }
                     foreach (var item in SubItems2List)
@@ -230,12 +231,12 @@ namespace TerminalBasedOs_Try
                 }
 
                 //load System
-                
-                if(ReadLineStr == "load")
+
+                if (ReadLineStr == "load")
                 {
 
-                    
-                    
+
+
 
                     int counterSubItems1 = 0;
                     int counterSubItems2 = 0;
@@ -248,7 +249,7 @@ namespace TerminalBasedOs_Try
                     string lineReader;
                     fileReader = new StreamReader("SubItems1Log.txt");
 
-                    while((lineReader = fileReader.ReadLine()) != null)
+                    while ((lineReader = fileReader.ReadLine()) != null)
                     {
                         Console.ForegroundColor = ConsoleColor.White;
                         counterSubItems1++;
@@ -266,10 +267,10 @@ namespace TerminalBasedOs_Try
                     }
                     fileReader = new StreamReader("SubItems2Log.txt");
 
-                    while((lineReader = fileReader.ReadLine()) != null)
+                    while ((lineReader = fileReader.ReadLine()) != null)
                     {
                         counterSubItems2++;
-                        if(counterSubItems2 <= 1)
+                        if (counterSubItems2 <= 1)
                         {
                             SubItems2List[0] = lineReader;
                         }
@@ -283,7 +284,7 @@ namespace TerminalBasedOs_Try
 
                     fileReader = new StreamReader("ItemTypes1Log.txt");
 
-                    while((lineReader = fileReader.ReadLine()) != null)
+                    while ((lineReader = fileReader.ReadLine()) != null)
                     {
                         counterItemTypes1++;
                         if (counterItemTypes1 <= 1)
@@ -300,7 +301,7 @@ namespace TerminalBasedOs_Try
                     }
                     fileReader = new StreamReader("ItemTypes2Log.txt");
 
-                    while((lineReader = fileReader.ReadLine()) != null)
+                    while ((lineReader = fileReader.ReadLine()) != null)
                     {
                         counterItemTypes2++;
                         if (counterItemTypes1 <= 1)
@@ -312,11 +313,11 @@ namespace TerminalBasedOs_Try
                             ItemTypes2List.Add(lineReader);
                         }
                         System.Threading.Thread.Sleep(500);
-                        Console.WriteLine("- Loading Item Types (Index)..." );
+                        Console.WriteLine("- Loading Item Types (Index)...");
                     }
                     fileReader = new StreamReader("SubItems1ContentLog.txt");
                     List<string> SubItems1Loader = new List<string>();
-                    while ((lineReader = fileReader.ReadLine()) != "endOf" )
+                    while ((lineReader = fileReader.ReadLine()) != "endOf" && counterContent1 != 0)
                     {
                         SubItems1Loader.Add(lineReader);
 
@@ -333,7 +334,7 @@ namespace TerminalBasedOs_Try
                     fileReader = new StreamReader("SubItems2ContentLog.txt");
                     List<string> SubItems2Loader = new List<string>();
 
-                    while ((lineReader = fileReader.ReadLine()) != "endOf")
+                    while ((lineReader = fileReader.ReadLine()) != "endOf" && counterContent2 != 0)
                     {
                         SubItems2Loader.Add(lineReader);
                         System.Threading.Thread.Sleep(500);
@@ -344,10 +345,10 @@ namespace TerminalBasedOs_Try
                     Console.WriteLine("- Loaded Content (Index)");
 
                     fileReader = new StreamReader("ItemNameLog.txt");
-                    while((lineReader = fileReader.ReadLine()) != null)
+                    while ((lineReader = fileReader.ReadLine()) != null)
                     {
                         counterItemLogs++;
-                        if(counterItemLogs <= 1)
+                        if (counterItemLogs <= 1)
                         {
                             Items[0] = lineReader;
                         }
@@ -378,7 +379,7 @@ namespace TerminalBasedOs_Try
 
                 if (ReadLineStr == "exit")
                 {
-                    
+
                     Environment.Exit(1);
                 }
 
@@ -389,7 +390,7 @@ namespace TerminalBasedOs_Try
                     Console.WriteLine(">>Enter the Main Index of the item");
                     ReadLineInt = Convert.ToInt32(Console.ReadLine());
                     MainIndex = ReadLineInt;
-                    
+
 
                     if (MainIndex == 0)
                     {
@@ -407,8 +408,8 @@ namespace TerminalBasedOs_Try
                             Console.WriteLine(" - " + item);
                         }
                         ReadLineStr = Console.ReadLine();
-                        
-                        MethodName = ReadLineStr; 
+
+                        MethodName = ReadLineStr;
 
                         if (MethodName == "name" || MethodName == "Name")
                         {
@@ -472,24 +473,24 @@ namespace TerminalBasedOs_Try
                     ReadLineStr = Console.ReadLine();
                     NewItemName = ReadLineStr;
                     Console.WriteLine(">>Enter the Item type (ex: itm.txt)");
-                    
-                        ReadLineStr = Console.ReadLine();
-                        TypeOfNewItem = ReadLineStr;
+
+                    ReadLineStr = Console.ReadLine();
+                    TypeOfNewItem = ReadLineStr;
                     if (ItemTypes.Contains(TypeOfNewItem))
-                        {
-                            MakeSubItem(MainItemIndex, NewItemName, TypeOfNewItem);
+                    {
+                        MakeSubItem(MainItemIndex, NewItemName, TypeOfNewItem);
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine(">>Item Created Successfully!");
                         Console.ForegroundColor = ConsoleColor.White;
                     }
-                        else
+                    else
+                    {
+                        Console.WriteLine(">>Enter a valid Item type");
+                        foreach (var item in ItemTypes)
                         {
-                            Console.WriteLine(">>Enter a valid Item type");
-                            foreach (var item in ItemTypes )
-                            {
-                                Console.WriteLine(" - " + item);
-                            }
+                            Console.WriteLine(" - " + item);
                         }
+                    }
 
 
 
@@ -530,7 +531,7 @@ namespace TerminalBasedOs_Try
                     ReadLineStr = Console.ReadLine();
 
 
-                    
+
                     if (ReadLineStr == "lsIn")
                     {
                         Console.WriteLine(">>Index (Int):");
@@ -579,24 +580,25 @@ namespace TerminalBasedOs_Try
 
 
                 Console.WriteLine(itemIndexes[indexNumber]);
-                 
-                if(indexNumber == 0)
+
+                if (indexNumber == 0)
                 {
                     int IndexOfInItem = 0;
 
                     Console.WriteLine(itemIndexes[indexNumber] + " " + "Items:");
                     foreach (var item in SubItems1List)
                     {
-                        Console.WriteLine(IndexOfInItem++ +" - " + item);
+                        Console.WriteLine(IndexOfInItem++ + " - " + item);
                     }
-                }else if (indexNumber == 1)
+                }
+                else if (indexNumber == 1)
                 {
                     int IndexOfInItem = 0;
 
                     Console.WriteLine(itemIndexes[indexNumber] + " " + "Items:");
                     foreach (var item in SubItems2List)
                     {
-                        Console.WriteLine(IndexOfInItem++ + " - "  +item);
+                        Console.WriteLine(IndexOfInItem++ + " - " + item);
                     }
                 }
 
@@ -609,14 +611,14 @@ namespace TerminalBasedOs_Try
 
             void MakeSubItem(int IndexOfMainItem, string NameOfItem, string TypeOfItem)
             {
-             
+
                 int LengthOf1;
                 int LengthOf2;
                 int TypeLength1;
                 int TypeLength2;
 
-               
-           
+
+
                 if (IndexOfMainItem == 0)
                 {
                     if (SubItems1List[0] == "Empty")
@@ -648,7 +650,7 @@ namespace TerminalBasedOs_Try
                         SubItems2Content.Add("");
                     }
                 }
-                
+
             }
 
             void ModifyContent(int MainIndex, int IndexInItem)
@@ -658,13 +660,13 @@ namespace TerminalBasedOs_Try
                 Console.WriteLine(">> Edit/Create the Content by Clicking Enter << \n " +
                     ">> Write exitSave when finished << ");
                 string Joiner = "none";
-                
-               
 
-             
+
+
+
                 if (MainIndex == 0)
                 {
-                    if(SubItems1Content[IndexInItem] != null)
+                    if (SubItems1Content[IndexInItem] != null)
                     {
                         Joiner = "none";
                         ModifiedContent.Clear();
@@ -682,11 +684,11 @@ namespace TerminalBasedOs_Try
                             }
                         }
                         else if (Console.ReadKey().Key == ConsoleKey.RightArrow)
-                        {        
+                        {
                             Console.CursorLeft--;
                         }
                     }
-                  
+
                     while (ReadLineStr != "exitItem" && ReadLineStr != "exitSave")
                     {
                         ReadLineStr = Console.ReadLine();
@@ -716,11 +718,12 @@ namespace TerminalBasedOs_Try
                             }
                             SubItems1ContentList.WriteLine("endOf" + "\n");
                             SubItems1ContentList.Close();
+                            SubItems2ContentList.Close();
                         }
                         ModifiedContent.Add(ReadLineStr);
                         Joiner = String.Join("\n", ModifiedContent.ToArray());
                         SubItems1Content[IndexInItem] = Joiner;
-                        
+
                     }
                 }
                 else if (MainIndex == 1)
@@ -733,7 +736,7 @@ namespace TerminalBasedOs_Try
                         Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop);
                         if (Console.ReadKey().Key == ConsoleKey.LeftArrow)
                         {
-                            if(Console.CursorLeft <= 0)
+                            if (Console.CursorLeft <= 0)
                             {
                                 Console.CursorTop--;
                             }
@@ -748,7 +751,7 @@ namespace TerminalBasedOs_Try
                             Console.CursorLeft--;
                         }
                     }
-                    
+
                     while (ReadLineStr != "exitItem" && ReadLineStr != "exitSave")
                     {
                         ReadLineStr = Console.ReadLine();
@@ -777,10 +780,13 @@ namespace TerminalBasedOs_Try
                             }
                             SubItems2ContentList.WriteLine("endOf" + "\n");
                             SubItems2ContentList.Close();
+                            SubItems1ContentList.Close();
+
                         }
                         ModifiedContent.Add(ReadLineStr);
                         Joiner = String.Join("\n", ModifiedContent.ToArray());
                         SubItems2Content[IndexInItem] = Joiner;
+    
                     }
 
 
@@ -788,27 +794,25 @@ namespace TerminalBasedOs_Try
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(">> Content Modified Successfully, use lsItems --content-see to see it << ");
                 Console.ForegroundColor = ConsoleColor.White;
-                }
-             
-            
-
-            
+            }
 
 
 
 
 
 
-                
-            
+
+
+
+
+
+
 
 
 
 
 
         }
-          
+
     }
 }
-    
-
