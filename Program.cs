@@ -352,6 +352,8 @@ namespace TerminalBasedOs_Try
                         }
                     }
 
+                    
+
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine(">> " + "" + "Loading Completed Successfully!");
                     Console.WriteLine("-----------------------------------");

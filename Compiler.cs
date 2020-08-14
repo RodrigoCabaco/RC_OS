@@ -24,7 +24,7 @@ namespace TerminalBasedOs_Try
             while ((compilingLine = reader.ReadLine()) != "endCode" && (compilingLine = reader.ReadLine()) != null)
             {
 
-                /*
+                
                 intgrsName.Add(compilingLine.Split("intgr").Last().Split(' ').Last().Split(">>").First());
                 try
                 {
@@ -44,7 +44,7 @@ namespace TerminalBasedOs_Try
                 
                        string getWrite = compilingLine.Split("Write").Last().Split("&>").Last().Split("<&").First();
                        Console.WriteLine(getWrite);
-                   */
+                   
 
                 Console.WriteLine(compilingLine);
 
